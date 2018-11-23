@@ -1,0 +1,1464 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+@font-face {
+
+  font-family: "BowlbyOneSC" ;
+  src: url("../fonts/BowlbyOneSC-Regular.ttf") format('truetype');
+
+}
+
+@font-face {
+
+  font-family: "Lato" ;
+  font-weight: 400;
+  src: url("../fonts/Lato-Regular.ttf") format('truetype');
+
+}
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Lato", Helvetica, arial, sans-serif;
+    color: #111;
+    background-color: #CC292D;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #FFE167;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: #FFE167;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+
+}
+
+h1 {
+    font-size: 46px;
+    line-height: 48px;
+    margin: 0 0 24px;
+    font-family: "BowlbyOneSC";
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 24px 24px;
+
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+table, tr {
+    border: 1px solid white;
+
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+th {
+    background: #FFE167;
+    color: #CC292D;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+table, tr {
+    border: 1px solid white;
+    color: #FFE167;
+
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+th {
+    background: #FFE167;
+    color: #CC292D;
+}
+
+a {
+
+    transition: all .1s ease-in-out;
+}
+
+a:visited,
+a:active {
+    color: BlueViolet;
+}
+
+a:hover,
+a:focus {
+    color: #E6CB5C;
+}
+
+svg {
+  width: 100%;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: 24px 24px 0;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+.o-row--space-btm {
+  padding-bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        /* padding: 0px; */
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+
+    .o-row--space-btm {
+      padding-bottom: 0;
+      margin-bottom: 0 !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+
+    .o-row--padding-0 {
+      padding-bottom: 0;
+    }
+}
+
+.o-row--center {
+    margin-top: 180px;
+    margin-bottom: auto;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90em; /* 90 * 16px = 1440px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    position: relative;
+}
+
+.o-section + .o-section {
+    padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        padding-top: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-section--xl + .o-section--xl {
+        padding-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+    .o-layout__item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+    margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+    padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+.o-layout--flex-direction-column {
+    flex-direction: column;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+.o-layout--align-content-vertical {
+    flex-direction: column;
+}
+
+.o-layout-center {
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+.o-submit {
+  display: block;
+  margin-top: 20px;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    padding-top: 0px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    color: #CC292D;
+    font-size: 32px;
+
+}
+
+.c-table {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+.c-header__logo {
+    align-self: center;
+}
+
+@media (min-width: 768px) {
+    .c-logo {
+        height: 40px;
+        padding-top: 32px;
+        font-size: 41px;
+    }
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.c-nav-trigger__svg {
+    fill: #CC292D;
+    height: 100%;
+}
+
+.c-nav {
+    font-size: 18px;
+    line-height: 24px;
+    display: none;
+
+}
+
+.c-nav--meta {
+    font-size: 26px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+  color: #CC292D;
+
+}
+
+.c-nav__link--meta,
+.c-nav__link--meta:visited,
+.c-nav__link--meta:active {
+  color: #CC292D;
+
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+  color: #801A1C;
+}
+
+.c-nav__item {
+  display: flex;
+  color: #FFE167;
+}
+
+
+.c-header__mobile-nav-trigger {
+      display: block;
+  }
+
+  .c-label {
+    display: block;
+  }
+
+.c-text {
+  width: 75%;
+  font-family: "Lato";
+  font-size: 26px;
+  background-color: #FFF2F2;
+  border-radius: 10px;
+  border: 0;
+  display: block;
+}
+
+.c-label {
+  font-family: "Lato";
+  color:#FFE167
+}
+
+.c-vertical {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.c-submit {
+  color: #801A1C;
+  Display: inline-block;
+  text-align: center;
+  text-decoration: none;
+   border-radius: 10px;
+  transition: 0.5s;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 8px 24px;
+  margin: 0 24px;
+  background-size: 200%;
+  box-shadow: inset 0 0 0 1px rgba(142, 199, 255, 0.2),0 0 10px rgba(17,149,255, 0.3);
+  background: #FFE167;
+}
+
+
+@media (min-width: 992px) {
+    .c-nav__list {
+        display: flex;
+        justify-content: center;
+        margin-left: -16px;
+        margin-right: -16px;
+        margin-bottom: 0px;
+    }
+
+    .c-nav__link {
+        padding: 8px 16px;
+        font-size: 20px;
+    }
+
+    .c-nav {
+      display: block;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none;
+    }
+
+    .c-text {
+      width: 50%;
+
+    }
+
+    .c-vertical {
+      margin-bottom: 80px;
+    }
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+
+}
+
+.c-header__nav {
+    display: inline;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+  .c-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+  }
+
+    .c-header__nav {
+        display: block;
+        letter-spacing: 1px;
+    }
+
+    .c-header__nav--main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 12px;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none;
+    }
+}
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.c-logo__mobile_nav {
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.has-mobile-nav .c-mobile-nav {
+    pointer-events: auto;
+
+}
+
+.c-nav__item-mobile {
+  margin-left: 24px;
+}
+
+.c-nav__link-mobile {
+  color: #FFE167 !important;
+}
+
+.c-nav__mobile {
+  display: block;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.c-mobile-nav__header {
+    display: flex;
+    background-color: #FFE167;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.c-page {
+  transition: all 1s ease-in; /* easeInOutCirc */
+}
+
+.has-mobile-nav .c-page {
+    transform: translateX(75%);
+
+
+}
+
+.c-mobile-nav__bg {
+  opacity: 0;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 1s ease-in; /* easeInOutCirc */
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+    opacity: 1;
+}
+
+.c-mobile-nav__body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #CC292D;
+    transform: translateX(-100%);
+    transition: all 1s ease-in; /* easeInOutCirc */
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+  transform: translateX(0%);
+
+}
+
+@media (min-width: 768px) {
+    .c-mobile-nav__body {
+
+    }
+}
+
+@media (min-width: 992px) {
+    /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
+    .c-mobile-nav {
+        display: none !important;
+    }
+}
+
+
+/*
+    Component: figure
+    ---
+    Special type of figure and figcaption
+*/
+
+.c-figure {
+    position: relative;
+}
+
+.c-figure__caption {
+    line-height: 15px;
+    margin-top: 8px;
+    padding-left: 6px;
+    padding-top: 1px;
+    border: 2px solid #5051DB;
+    border-width: 0 0 0 2px;
+    color: #000;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .c-figure__caption--absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 8px;
+        text-align: right;
+        background-color: #fff;
+        padding: 16px;
+        max-width: 260px;
+        border-width: 0 4px 0 0;
+    }
+}
+
+.c-link-button {
+  color: #801A1C;
+  Display: inline-block;
+  text-align: center;
+  text-decoration: none;
+   border-radius: 10px;
+  transition: 0.5s;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 8px 24px;
+  margin: 0 24px;
+  background-size: 200%;
+  box-shadow: inset 0 0 0 1px rgba(142, 199, 255, 0.2),0 0 10px rgba(17,149,255, 0.3);
+  background: #FFE167;
+}
+
+.c-lost {
+    opacity: 0.5;
+}
+
+.c-link-button:hover{
+  background: #801A1C;
+  color: #FFF;
+
+}
+
+.c-players {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.c-list__item {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+
+.c-figure-position {
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.c-round {
+  font-family: "BowlbyOneSC";
+  color: #FFE167;
+  text-align: center;
+  font-size: 46px;
+  line-height: 46px;
+}
+
+.c-move {
+  color: #FFE167;
+  text-align: center;
+  font-size: 36px;
+  line-height: 36px;
+
+}
+
+.c-winner {
+  color: #FFE167;
+  text-align: left;
+  font-size: 41px;
+  line-height: 41px;
+}
+
+.c-twister {
+
+  background-color: #FFF;
+  border-radius: 25px;
+  padding: 24px;
+  max-width: 100%;
+
+}
+
+.c-bol {
+    height: 48px;
+    width: 48px;
+}
+
+.c-twister {
+  background-color: #fff;
+  padding: 24px;
+}
+
+.c-twister__row {
+  display: flex;
+}
+
+.c-twister__item {
+  padding: 4px;
+}
+
+.c-text__about {
+    text-align: center;
+}
+
+.c-link__about {
+    font-size: 12px;
+}
+
+.c-circle {
+  stroke: 3;
+}
+
+.circle-green {
+  fill: #4B8640;
+}
+
+.circle-yellow {
+  fill: #F7D824;
+}
+
+.circle-blue {
+  fill: #2689D9;
+}
+.circle-red {
+  fill: red;
+}
+
+
+
+
+.c-title {
+  font-family: "BowlbyOneSC";
+  color: #FFE167;
+  text-align: left;
+  font-size: 46px;
+  line-height: 46px;
+  margin-top: 32px;
+}
+
+.c-title_home {
+  font-family: "BowlbyOneSC";
+  color: #FFE167;
+  text-align: left;
+  font-size: 46px;
+  line-height: 46px;
+  margin-top: 32px;
+}
+
+.c-body_center {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+@media (min-width: 768px) {
+  .c-bol {
+      height: 68px;
+      width: 68px;
+  }
+    .c-players {
+    flex-direction: row;
+}
+    .c-link__about {
+    font-size: 16px;
+}
+}
+
+@media (min-width: 992px) {
+  .c-bol {
+      height: 88px;
+      width: 88px;
+      margin: 10px;
+
+  }
+
+  .c-round {
+    font-size: 66px;
+    line-height: 66px;
+  }
+
+  .c-title {
+    font-size: 66px;
+    line-height: 66px;
+  }
+
+  .c-title_home {
+    font-size: 105px;
+    line-height: 105px;
+  }
+
+  .c-move {
+    font-size: 58px;
+    line-height: 58px;
+
+  }
+
+  .c-link-button {
+
+  }
+
+  .c-twister__item {
+    padding: 8px;
+  }
+
+
+
+}
+
+
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 18em !important;
+}
+
+.u-max-width-sm {
+    max-width: 39em !important;
+}
+
+.u-max-width-md {
+    max-width: 50em !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+.u-color-head {
+  background-color: #FFE167;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.u-color-nav__home {
+    color: #FFE167 !important;
+}
+
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+    width: auto !important;
+}
+
+.u-1-of-2 {
+    width: 50% !important;
+}
+
+.u-1-of-3 {
+    width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+    width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+    width: 25% !important;
+}
+
+.u-3-of-4 {
+    width: 75% !important;
+}
+
+.u-1-of-5 {
+    width: 20% !important;
+}
+
+.u-2-of-5 {
+    width: 40% !important;
+}
+
+.u-3-of-5 {
+    width: 60% !important;
+}
+
+.u-4-of-5 {
+    width: 80% !important;
+}
+
+.u-1-of-6 {
+    width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+    width: 83.3333333333% !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp1 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp1 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp1 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp1 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp1 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp1 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp1 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp1 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp1 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp1 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp2 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp2 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp2 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp2 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp2 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp2 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp2 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp2 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp2 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp2 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp3 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp3 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp3 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp3 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp3 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp3 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp3 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp3 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp3 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp3 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp4 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp4 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp4 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp4 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp4 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp4 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp4 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp4 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp4 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp4 {
+        width: 83.3333333333% !important;
+    }
+}
+
+
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

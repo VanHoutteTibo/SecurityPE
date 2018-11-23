@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Twister</title>
+        <meta name="description" content="This is my HTML5 boilerplate.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#3385FF">
+        <meta name="theme-color" content="#3385FF">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#3385FF">
+
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/screen.css">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                toggleNav();
+            })
+
+            function toggleNav() {
+                let toggleTrigger = document.querySelectorAll(".js-toggle-nav");
+                for (let i = 0; i < toggleTrigger.length; i++) {
+                    toggleTrigger[i].addEventListener("click", function() {
+                        console.log("ei");
+                        document.querySelector("body").classList.toggle("has-mobile-nav");
+                    })
+                }
+            }
+        </script>
+
+
+
+    </head>
+    <body>
+    <header class="o-row o-row--md o-row--header u-color-head" id="header">
+        <div class="o-container">
+          <div class="c-header">
+            <div class="c-header__logo">
+              <a href="/" class="c-nav__link"><h1 class="c-logo">
+                Twister
+              </h1></a>
+              </div>
+              <div class="c-header__nav">
+                <nav class="c-nav c-nav--meta">
+                    <ul class="o-list c-nav__list">
+                        <li class="c-nav__item"><a class="c-nav__link c-nav__link--meta" href="/historiek">Historiek</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="c-header__nav">
+            <nav class="c-nav c-nav--meta">
+                <ul class="o-list c-nav__list">
+                    <li class="c-nav__item"><a class="c-nav__link c-nav__link--meta" href="/about">About</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="c-header__mobile-nav-trigger">
+                <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                    <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+      </header>
+        <section class="o-row o-row--lg u-pt-clear o-row--foreground o-row--padding-0 o-row--center">
+          <div class="o-container">
+            <div class="o-layout o-layout--gutter-lg o-layout--align-center o-layout--flex-direction-column o-layout--justify-center">
+                <h1 class="c-title_home">Je hebt gewonnen!!!</h1> <br>
+                <a class="c-nav__link c-nav__link--meta c-link-button" href="/Nieuw_Spel">Nieuw spel</a>
+            </div>
+          </div>
+        </section>
+    <aside class="c-mobile-nav">
+            <div class="c-mobile-nav__bg"></div>
+            <div class="c-mobile-nav__body">
+                <div class="c-mobile-nav__header">
+                  <div class="c-header__logo">
+                    <h1 class="c-logo c-logo__mobile_nav">
+                      Twister
+                    </h1>
+                    </div>
+                    <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                        <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+                    <nav class="c-nav c-nav__mobile">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item c-nav__item-mobile"><a href="/historiek" class="c-nav__link c-nav__link-mobile">Historiek</a></li>
+                            <li class="c-nav__item c-nav__item-mobile"><a href="/about" class="c-nav__link c-nav__link-mobile">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                </div>
+            </div>
+        </aside>
+    </body>
+</html>

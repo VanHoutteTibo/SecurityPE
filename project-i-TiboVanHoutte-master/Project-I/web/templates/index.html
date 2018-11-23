@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Twister</title>
+        <meta name="description" content="This is my HTML5 boilerplate.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#3385FF">
+        <meta name="theme-color" content="#3385FF">
+
+{#        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">#}
+{#        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">#}
+{#        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">#}
+{#        <link rel="manifest" href="site.webmanifest">#}
+{#        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#3385FF">#}
+
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/css/screen.css">
+
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+
+
+    </head>
+    <body>
+        <header class="o-row o-row--md o-row--header u-color-head" id="header">
+          <div class="o-container">
+            <nav class="c-header">
+              <div class="c-header__logo">
+                  <a href="/" class="c-nav__link"><h1 class="c-logo">
+                  Twister
+                </h1></a>
+              </div>
+            </nav>
+            </div>
+          </div>
+        </header>
+
+        <section class="o-row o-row--lg o-row--foreground ">
+          <div class="o-container">
+            <div class="o-layout o-layout--gutter-lg o-layout--align-center">
+              <div class="o-layout__item u-1-of-2-bp3 o-layout-center o-layout--align-content-vertical">
+                <h2 class="c-round" id ="round">
+                    Ronde <br> -
+                </h2>
+                <h2 class="c-move" id="move">
+
+                </h2>
+              </div>
+              <div class="o-layout__item u-1-of-2-bp3">
+                <div class="c-twister" id="twister">
+
+                </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section class="o-row o-row--lg u-pt-clear o-row--foreground">
+        <div class="o-container">
+          <ul class="o-list o-layout">
+            <div class="o-layout__item c-players">
+                {% for  value in result %}
+
+                    <li class="c-list__item"><a class="c-nav__link c-nav__link--meta c-link-button" id="player{{ loop.index }}" href="#!">{{ value }}</a></li>
+
+
+                 {% endfor %}
+{#              <li class="c-list__item"><a class="c-nav__link c-nav__link--meta c-link-button" href="#!">Bart</a></li>#}
+{#              <li class="c-list__item"><a class="c-nav__link c-nav__link--meta c-link-button" href="#!">Chantal</a></li>#}
+{##}
+{#              <li class="c-list__item"><a class="c-nav__link c-nav__link--meta c-link-button" href="#!">Emma</a></li>#}
+{#              <li class="c-list__item"><a class="c-nav__link c-nav__link--meta c-link-button" href="#!">Sam</a></li>#}
+            </div>
+
+
+          </ul>
+        </nav>
+        </div>
+        </section>
+        <script src="static/script/script.js"></script>
+        <script>
+
+            let round = 0;
+            namespace = '/test';
+            let index;
+            let players = [];
+            let solo = 1;
+            let name;
+            let abbrs = document.getElementsByClassName("c-link-button");
+            let len = abbrs.length;
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+
+            if (len > 0) {
+                players.push("player1")
+                document.getElementById("player1").addEventListener("click", function(e){
+                    name = document.getElementById("player1").text;
+                    if (players.length == 1) {
+
+                        window.alert(document.getElementById(players[0]).text + " heeft gewonnen!!!");
+                        window.location.href = location.protocol + '//' + document.domain + ':' + location.port + "/winner/" + document.getElementById(players[0]).text;
+                    };
+                    index = players.indexOf("player1");
+                    players.splice(index, 1);
+                    document.getElementById("player1").classList.add('c-lost');
+                    console.log(players)
+                    if (players.length == solo) {
+
+                        window.alert(document.getElementById(players[0]).text + " heeft gewonnen!!!");
+                        window.location.href = location.protocol + '//' + document.domain + ':' + location.port + "/winner/" + document.getElementById(players[0]).text;
+                    };
+               });
+            }  if (len > 1) {
+                players.push("player2")
+                document.getElementById("player2").addEventListener("click", function(e){
+                    name = document.getElementById("player2").text;
+                    index = players.indexOf("player2");
+                    players.splice(index, 1);
+                    document.getElementById("player2").classList.add('c-lost');
+                    if (players.length == solo) {
+                        window.alert(document.getElementById(players[0]).text + " heeft gewonnen!!!")
+                        window.location.href = location.protocol + '//' + document.domain + ':' + location.port + "/winner/" + document.getElementById(players[0]).text;
+                    }
+               });
+            }  if (len > 2) {
+                players.push("player3")
+                document.getElementById("player3").addEventListener("click", function(e){
+                    name = document.getElementById("player3").text;
+                    document.getElementById("player3").classList.add('c-lost');
+                    index = players.indexOf("player3");
+                    players.splice(index, 1);
+                    if (players.length == solo) {
+                        window.alert(document.getElementById(players[0]).text + " heeft gewonnen!!!")
+                        window.location.href = location.protocol + '//' + document.domain + ':' + location.port + "/winner/" + document.getElementById(players[0]).text;
+                    }
+               });
+            }  if (len > 3) {
+                players.push("player4")
+                document.getElementById("player4").addEventListener("click", function(e){
+                    name = document.getElementById("player4").text;
+                    document.getElementById("player4").classList.add('c-lost');
+                    index = players.indexOf("player4");
+                    players.splice(index, 1);
+                    if (players.length == solo) {
+                        window.alert(document.getElementById(players[0]).text + " heeft gewonnen!!!")
+                        window.location.href = location.protocol + '//' + document.domain + ':' + location.port + "/winner/" + document.getElementById(players[0]).text;
+                    }
+               });
+            }
+            if (len == 1) {
+                solo = 0
+            }
+
+
+            socket.on('connect', function() {
+                window.alert("connected!");
+              console.info("connected test");
+            });
+            socket.on('my data', function (msg) {
+                let code = msg;
+                for (let i = 1; i <= code.length ; i++) {
+
+                    if (code[i-1] == "1") {
+                        if(i <= 6) {
+                            console.log(i.toString())
+                            document.getElementById(i.toString()).classList.add('circle-green');
+                        } else if (i > 6 &&  i <= 12) {
+                            document.getElementById(i.toString()).classList.add('circle-yellow');
+                        } else if (parseInt(i) > 12 &&  parseInt(i) <= 18) {
+                            document.getElementById(i.toString()).classList.add('circle-blue');
+                        } else if (parseInt(i) > 18) {
+                            document.getElementById(i.toString()).classList.add('circle-red');
+                        }
+                    }
+                    if (code[i-1] == "0") {
+                        if(i <= 6) {
+                            console.log(i.toString())
+                            document.getElementById(i.toString()).classList.remove('circle-green');
+                        } else if (i > 6 &&  i <= 12) {
+                            document.getElementById(i.toString()).classList.remove('circle-yellow');
+                        } else if (parseInt(i) > 12 &&  parseInt(i) <= 18) {
+                            document.getElementById(i.toString()).classList.remove('circle-blue');
+                        } else if (parseInt(i) > 18) {
+                            console.log("red")
+                            document.getElementById(i.toString()).classList.remove('circle-red');
+                        }
+
+                    }
+                }
+
+            });
+            socket.on('round', function (deg) {
+                round ++;
+                document.getElementById("round").innerHTML = "ronde <br>" + round;
+                console.log(deg);
+                if (deg < 90) {
+                    document.getElementById("move").innerHTML = "Rechter voet ";
+                } else if (deg > 90 && deg < 180) {
+                    document.getElementById("move").innerHTML = "Rechter hand ";
+                    deg = deg-90
+                }
+                else if (deg > 180 && deg < 270) {
+                    document.getElementById("move").innerHTML = "Linker voet ";
+                    deg = deg-180
+                }
+                else if ( deg < 360) {
+                    document.getElementById("move").innerHTML = "Linker hand ";
+                    deg = deg-270
+                }
+                console.log(deg)
+                if (deg < 15) {
+                    document.getElementById("move").innerHTML += "Blauw";
+                } else if (deg > 15 && deg < 30){
+                    document.getElementById("move").innerHTML += "Geel";
+                } else if (deg > 30 && deg < 45) {
+                    document.getElementById("move").innerHTML += "Lucht";
+                } else if (deg > 45 && deg < 60) {
+                    document.getElementById("move").innerHTML += "Groen";
+                } else if (deg > 60 && deg < 75) {
+                    document.getElementById("move").innerHTML += "Rood";
+                } else if (deg < 90) {
+                    document.getElementById("move").innerHTML += "<br> De draaier mag kiezen";
+                }
+
+                socket.emit('message', "test");
+            });
+        </script>
+    </body>
+ 

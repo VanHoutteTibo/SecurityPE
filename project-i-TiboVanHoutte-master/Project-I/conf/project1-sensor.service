@@ -1,0 +1,14 @@
+[Unit]
+Description=Project 1 sensor service
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=nmctproject
+Group=nmctproject
+WorkingDirectory=/home/nmctproject/project1/sensor
+ExecStart=/home/nmctproject/env/bin/python /home/nmctproject/project1/sensor/sensor.py
+
+[Install]
+WantedBy=multi-user.target
